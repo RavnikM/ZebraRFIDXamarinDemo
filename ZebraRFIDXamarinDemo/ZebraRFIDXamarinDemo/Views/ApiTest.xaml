@@ -13,9 +13,9 @@
             <Label x:Name="label_get" Text="{Binding Response}" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
 
 
-            <Entry Text="" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
+            <Entry x:Name="entry_post" Text="{Binding PostRequest}" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
             <Button Text="Send" Clicked="on_post_clicked" HorizontalOptions="Fill"/>
-            <Label x:Name="label_post" Text="" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
+            <Label x:Name="label_post" Text="{Binding PostResponse}" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
 
         </StackLayout>
     </ContentPage.Content>

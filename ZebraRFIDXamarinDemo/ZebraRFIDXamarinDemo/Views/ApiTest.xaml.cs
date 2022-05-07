@@ -15,36 +15,56 @@ namespace ZebraRFIDXamarinDemo.Views
     public partial class ApiTest : ContentPage
     {
         private ApiTestViewModel apitest;
+        private HttpClient _client;
 
         public ApiTest()
         {
             InitializeComponent();
             BindingContext = apitest = new ApiTestViewModel();
             apitest.Request = "http://api.open-notify.org/iss-now.json?callback=?";
-
+            _client = new HttpClient();
         }
         
         public async void on_get_clicked(object sender, EventArgs e)
         {
             System.Console.WriteLine("Klik na GET");
 
-            HttpClient _client;
-            _client = new HttpClient();
-            HttpResponseMessage response = await _client.GetAsync(apitest.Request);
-            if (response.IsSuccessStatusCode)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                System.Console.WriteLine(content);
-                apitest.Response = content;
-
-                //RecivedDataEditorGET.Text = content;
+            try { 
+                HttpResponseMessage response = await _client.GetAsync(apitest.Request);
+                if (response.IsSuccessStatusCode)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    System.Console.WriteLine(content);
+                    apitest.Response = content;
+                }
             }
+            catch (Exception) 
+                {
+                System.Console.WriteLine("Http request error happend!");
+                }
         }
 
 
-        public void on_post_clicked(object sender, EventArgs e)
+        public async void on_post_clicked(object sender, EventArgs e)
         {
             System.Console.WriteLine("Klik na POST");
+
+            try
+            {
+                var data = new StringContent(apitest.PostResponse);
+                HttpResponseMessage response = await _client.PostAsync(apitest.PostRequest, data);
+                if (response.IsSuccessStatusCode)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    System.Console.WriteLine(content);
+                    apitest.Response = content;
+                }
+            }
+            catch (Exception)
+            {
+                System.Console.WriteLine("Http request error happend!");
+            }
+
         }
     }
 }

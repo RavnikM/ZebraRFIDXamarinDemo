@@ -20,10 +20,16 @@ namespace ZebraRFIDXamarinDemo.ViewModels
 
         private static string _get_response;
         private static string _get_request;
+        private static string _post_response;
+        private static string _post_request;
 
         public string Response { get => _get_response; set { _get_response = value; OnPropertyChanged(); } }
 
         public string Request { get => _get_request; set { _get_request = value; OnPropertyChanged(); } }
+
+        public string PostResponse { get => _post_response; set { _post_response = value; OnPropertyChanged(); } }
+
+        public string PostRequest { get => _post_request; set { _post_request = value; OnPropertyChanged(); } }
 
 
 
