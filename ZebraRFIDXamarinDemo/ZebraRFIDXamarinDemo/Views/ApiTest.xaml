@@ -8,14 +8,14 @@
                 HorizontalOptions="CenterAndExpand" />
 
 
-            <Entry Text="GET Method" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
+            <Entry Text="" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
             <Button Text="Send" Clicked="on_get_clicked" HorizontalOptions="Fill"/>
-            <Label x:Name="label_get" Text="API result" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
+            <Label x:Name="label_get" Text="{Binding Response}" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
 
 
-            <Entry Text="Post Method" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
+            <Entry Text="" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
             <Button Text="Send" Clicked="on_post_clicked" HorizontalOptions="Fill"/>
-            <Label x:Name="label_set" Text="API result" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
+            <Label x:Name="label_post" Text="" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
 
         </StackLayout>
     </ContentPage.Content>

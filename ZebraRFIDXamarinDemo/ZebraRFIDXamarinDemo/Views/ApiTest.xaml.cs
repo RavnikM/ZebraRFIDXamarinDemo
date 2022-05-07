@@ -7,17 +7,20 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using ZebraRFIDXamarinDemo.ViewModels;
 
 namespace ZebraRFIDXamarinDemo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ApiTest : ContentPage
     {
+        private ApiTestViewModel apitest;
+
         public ApiTest()
         {
             InitializeComponent();
-            
+            BindingContext = apitest = new ApiTestViewModel();
+
         }
         
         public async void on_get_clicked(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace ZebraRFIDXamarinDemo.Views
             {
                 string content = await response.Content.ReadAsStringAsync();
                 System.Console.WriteLine(content);
-                
+                apitest.Response = content;
                 //RecivedDataEditorGET.Text = content;
             }
         }
