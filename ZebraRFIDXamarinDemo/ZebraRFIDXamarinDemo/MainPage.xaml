@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:ZebraRFIDXamarinDemo"
 			 x:Class="ZebraRFIDXamarinDemo.MainPage"
 			 Padding="5, 0"
-			 Title="Zebra RFID Xamarin Demo">
+			 Title="Zebra RFID Xamarin Marko Api Demo">
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Text="@" Clicked="ToolbarItem_Clicked">
 		</ToolbarItem>

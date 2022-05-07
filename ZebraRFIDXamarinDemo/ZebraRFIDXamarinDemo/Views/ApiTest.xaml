@@ -4,17 +4,22 @@
              x:Class="ZebraRFIDXamarinDemo.Views.ApiTest">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello A" 
+            <Label Text="RestAPI - test case for integrations" 
                 HorizontalOptions="CenterAndExpand" />
 
+            <Label Text="GET Method, International Space Station location API for example ..." 
+                HorizontalOptions="CenterAndExpand" />
 
-            <Entry x:Name="entry_get" Text="{Binding Request}" HorizontalTextAlignment="Start" Placeholder="http://api.open-notify.org/iss-now.json?callback=?"/>
-            <Button Text="Send" Clicked="on_get_clicked" HorizontalOptions="Fill"/>
+            <Entry x:Name="entry_get" Text="{Binding Request}" HorizontalTextAlignment="Start" Placeholder="Api GET endpoint ..."/>
+            <Button Text="GET" Clicked="on_get_clicked" HorizontalOptions="Fill"/>
             <Label x:Name="label_get" Text="{Binding Response}" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
 
 
-            <Entry x:Name="entry_post" Text="{Binding PostRequest}" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
-            <Button Text="Send" Clicked="on_post_clicked" HorizontalOptions="Fill"/>
+            <Label Text="POST Data from scanner (TagID) to API endpoint ..." 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="entry_post" Text="{Binding PostRequest}" HorizontalTextAlignment="Start" Placeholder="Api POST endpoint..."/>
+            <Button Text="POST" Clicked="on_post_clicked" HorizontalOptions="Fill"/>
             <Label x:Name="label_post" Text="{Binding PostResponse}" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
 
         </StackLayout>
