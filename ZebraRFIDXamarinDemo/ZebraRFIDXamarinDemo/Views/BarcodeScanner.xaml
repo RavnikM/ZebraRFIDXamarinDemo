@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZebraRFIDXamarinDemo.Views.BarcodeScanner">
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0" CompressedLayout.IsHeadless="true">
+        <StackLayout  Padding="0,0,0,0">
+            <Grid RowSpacing="2" ColumnSpacing="0" BackgroundColor="#E6E6E6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name = "lbBarcodeCount" 
+                       TextColor="#8c8c8c" 
+                       Margin="10,0,0,0" 
+                       Text="{Binding BarcodeCount}" 
+                       HorizontalOptions="Start" 
+                       FontSize = "12" 
+                       VerticalTextAlignment="Center"  
+                       Grid.Row="0" Grid.Column="0"/>
+                <Button 
+                    Text="Clear" 
+                    HorizontalOptions="End" 
+                    Clicked="ClearClicked"
+                    Margin="0,0,10,0" 
+                    TextColor="#8c8c8c"   
+                    FontSize = "12" 
+                    VerticalOptions="Center"  
+                    Grid.Row="0" 
+                    Grid.Column="1" />
+            </Grid>
+            <ListView x:Name="BarcodeListView" 
+                      IsVisible="{Binding ShowList}"
+                      ItemsSource="{Binding BarcodeList}" 
+                      SelectedItem="{Binding SelectedBarcode, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell TextColor="Black" Text="{Binding BarcodeType}" Detail="{Binding Barcode}" ></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" Spacing="10" Padding="5" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" IsVisible="{Binding ShowStatus}">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Scanner: "/>
+                <Label Text="{Binding ConnectionStatus}" TextColor="Accent"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZebraRFIDXamarinDemo.Views.FirmwareUpdate">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <Label Text="Connected Device: "/>
+                <Label Text="{Binding ConnectedDevice}" TextColor="Accent"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="From: " />
+                            <Span Text="{Binding ScannerFWVersion}" TextColor="Accent"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="To: " />
+                            <Span Text="{Binding MySelectedFile}" TextColor="Accent"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <Button x:Name="update_button"
+                 Text= "{Binding FirmwareButton}"
+                Clicked="ButtonFirmwareClicked"
+                BackgroundColor="Accent"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
+                <Label Text="Firmware Update Progress"/>
+                <ProgressBar Progress="{Binding CurrentProgress}"  ScaleY="2" />
+                <Label Text="{Binding CurrentPercentage}" HorizontalTextAlignment="End"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
+                <Label Text="Copy .DAT file into /sdcard/Download/ZebraFirmware and then start update"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

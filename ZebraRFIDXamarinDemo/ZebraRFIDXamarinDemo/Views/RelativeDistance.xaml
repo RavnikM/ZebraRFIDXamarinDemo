@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZebraRFIDXamarinDemo.ViewModels"
+             x:Class="ZebraRFIDXamarinDemo.Views.RelativeDistance">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:HeatMapConverter x:Key="cnvHeatMap"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0">
+        <ListView x:Name="MyListView"
+            ItemsSource="{Binding Tags}"
+            ItemTapped="Handle_ItemTapped" IsVisible="{Binding listAvailable}">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding InvID}"/>
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="8*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <AbsoluteLayout Grid.Row="0" Grid.Column="0">
+                                    <BoxView Color="LightGray" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <BoxView Color="{Binding RelativeDistance, Converter={StaticResource cnvHeatMap} }"
+                                     AbsoluteLayout.LayoutBounds="{Binding RelativeDistance, Converter={x:StaticResource cnvHeatMap}}" AbsoluteLayout.LayoutFlags="All"/>
+                                </AbsoluteLayout>
+                                <Label Text="{Binding RelativeDistance}" Grid.Row="0" Grid.Column="1"/>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Vertical" Spacing="10" Padding="5" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" IsVisible="{Binding hintAvailable}">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Reader: "/>
+                <Label Text="{Binding readerConnection}" TextColor="Accent"/>
+            </StackLayout>
+            <Label Text="Press and hold the trigger for tag reading" IsVisible="{Binding isConnected}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

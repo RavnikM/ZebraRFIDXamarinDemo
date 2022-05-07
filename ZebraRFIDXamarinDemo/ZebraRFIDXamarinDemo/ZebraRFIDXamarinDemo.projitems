@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{6530D03E-137E-4BD1-937B-0717F52B66F3}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ZebraRFIDXamarinDemo</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\InventoryList.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ReaderList.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ReadWriteAccess.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LocateTag.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ViewDemo.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\About.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\RelativeDistance.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AppConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BarcodeTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ScannerModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TagItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ApiTestViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BarcodeScannerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ReaderModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FirmwareUpdateViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HeatMapConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LocateViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PageDataViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RelativeDistanceViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TriggerMappingViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ApiTest.xaml.cs">
+      <DependentUpon>ApiTest.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\BarcodeScanner.xaml.cs">
+      <DependentUpon>BarcodeScanner.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FirmwareUpdate.xaml.cs">
+      <DependentUpon>FirmwareUpdate.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TriggerMapping.xaml.cs">
+      <DependentUpon>TriggerMapping.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ViewDemo.xaml.cs">
+      <DependentUpon>ViewDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\InventoryListModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ReaderListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ReadWriteOperationsModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ReaderItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\InventoryList.xaml.cs">
+      <DependentUpon>InventoryList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LocateTag.xaml.cs">
+      <DependentUpon>LocateTag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ReaderList.xaml.cs">
+      <DependentUpon>ReaderList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ReadWriteAccess.xaml.cs">
+      <DependentUpon>ReadWriteAccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RelativeDistance.xaml.cs">
+      <DependentUpon>RelativeDistance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\FirmwareUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\BarcodeScanner.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\TriggerMapping.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ApiTest.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

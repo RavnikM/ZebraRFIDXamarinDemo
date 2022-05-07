@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZebraRFIDXamarinDemo.Views.LocateTag">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical">
+			<Entry x:Name="tagPattern" Placeholder = "Tag Pattern"  Text="{Binding TagPattern, Mode=TwoWay}"  />
+			<StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+				<AbsoluteLayout Rotation="180">
+					<BoxView Color="Gold" AbsoluteLayout.LayoutBounds="0,.5,50,300"/>
+					<BoxView Color="Accent" AbsoluteLayout.LayoutBounds="{Binding DistanceBox}"/>
+				</AbsoluteLayout>
+				<Label Text="{Binding RelativeDistance}" HorizontalOptions="CenterAndExpand" FontSize="Large"></Label>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

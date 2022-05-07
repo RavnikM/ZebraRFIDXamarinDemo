@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZebraRFIDXamarinDemo.Views.ReaderList">
+    <ListView  x:Name="lvMenu" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemsSource="{Binding AllItems}"  
+			   SelectedItem="{Binding SelectedReader,Mode=TwoWay}" BackgroundColor="Transparent" ItemTapped="lvMenu_ItemTapped">
+		<ListView.Header>
+			<StackLayout Orientation="Horizontal" BackgroundColor="#cccccc" Spacing="20" Padding="10">
+				<Label Text="Avialable Readers" />
+			</StackLayout>
+		</ListView.Header>
+		<ListView.ItemTemplate>
+			<DataTemplate >
+				<ViewCell >
+					<StackLayout Padding="5" Margin="5">
+						<StackLayout Orientation="Horizontal" >
+							<Label Text="{Binding DeviceNumber}" />
+						</StackLayout>
+                        <StackLayout Orientation="Horizontal" IsVisible="{Binding IsSelected}">
+							<Label Text="Serial :     " />
+							<Label Text="{Binding DeviceSerialNumber}" />
+						</StackLayout>
+                        <StackLayout x:Name="SerialLabel" Orientation="Horizontal" IsVisible="{Binding IsSelected}">
+							<Label Text="Model :     " />
+							<Label Text="{Binding DeviceModel}" />
+						</StackLayout>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>

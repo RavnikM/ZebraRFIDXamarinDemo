@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZebraRFIDXamarinDemo.Views.ReadWriteAccess">
+	<!--Pages can be added as references or inline-->
+	<ContentPage Title="Read/Write" >
+		<ScrollView>
+		<StackLayout Padding="5" Orientation="Vertical">
+			<Entry x:Name="tagPattern" Placeholder = "Tag Pattern"   Text="{Binding TagPattern, Mode=TwoWay}" >
+			</Entry>
+			<StackLayout Orientation="Horizontal" Spacing="15">
+				<Label Text="Password" VerticalTextAlignment="Center"/>
+				<Entry x:Name="password" HorizontalOptions="FillAndExpand" Text="{Binding Password, Mode=TwoWay}" HorizontalTextAlignment="Center"/>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" Spacing="15">
+				<Label Text="Memory Bank" VerticalTextAlignment="Center"/>
+				<Picker x:Name="memorypicker"    HorizontalOptions="FillAndExpand" SelectedItem="{Binding Memorybank, Mode=TwoWay}">
+					<Picker.ItemsSource>
+						<x:Array Type="{x:Type x:String}">
+							<x:String>EPC</x:String>
+							<x:String>TID</x:String>
+							<x:String>USER</x:String>
+							<x:String>ACCESS PASSWORD</x:String>
+							<x:String>KILL PASSWORD</x:String>
+						</x:Array>
+					</Picker.ItemsSource>
+					<Picker.SelectedIndex>0</Picker.SelectedIndex>
+				</Picker>
+			</StackLayout>
+			<StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
+				<Label Text="Data"/>
+				<Editor x:Name="data" Text="{Binding AccessData, Mode=TwoWay}" HorizontalOptions="FillAndExpand" AutoSize="TextChanges"/>
+			</StackLayout>
+				<StackLayout Orientation="Horizontal"  VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+					<Button Text="Read"  Clicked="ReadOperation" BackgroundColor="Accent" TextColor="White" HorizontalOptions="FillAndExpand"/>
+					<Button Text="Write" Clicked="WriteOperation" BackgroundColor="Accent" TextColor="White" HorizontalOptions="FillAndExpand"/>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage>
+	<ContentPage Title="Lock" >
+		<StackLayout Padding="10,10,10,10"  Spacing="10">
+			<Entry x:Name="LockTagPattern" Placeholder = "Tag Pattern"  Text="{Binding TagPattern, Mode=TwoWay}"/>
+			<StackLayout Orientation="Horizontal" Spacing="15">
+				<Label Text="Password" VerticalTextAlignment="Center"/>
+				<Entry x:Name="LockPassword" HorizontalOptions="FillAndExpand" Text="{Binding Password, Mode=TwoWay}" HorizontalTextAlignment="Center"/>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" Spacing="15">
+				<Label Text="Memory Bank" VerticalTextAlignment="Center"/>
+				<Picker x:Name="memorylockpicker"  HorizontalOptions="FillAndExpand" SelectedItem="{Binding Memorybank, Mode=TwoWay}">
+					<Picker.ItemsSource>
+						<x:Array Type="{x:Type x:String}">
+							<x:String>EPC</x:String>
+							<x:String>TID</x:String>
+							<x:String>USER</x:String>
+							<x:String>ACCESS PASSWORD</x:String>
+							<x:String>KILL PASSWORD</x:String>
+						</x:Array>
+					</Picker.ItemsSource>
+					<Picker.SelectedIndex>0</Picker.SelectedIndex>
+				</Picker>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" Spacing="15">
+				<Label Text="Lock Privilege" VerticalTextAlignment="Center"/>
+                <Picker x:Name="lockPrivilege"  HorizontalOptions="FillAndExpand" SelectedItem="{Binding LockPrivilege, Mode=TwoWay}">
+					<Picker.ItemsSource>
+						<x:Array Type="{x:Type x:String}">
+							<x:String>Read and Write</x:String>
+							<x:String>Permanent Lock</x:String>
+							<x:String>Permanent Unlock</x:String>
+							<x:String>Unlock</x:String>
+						</x:Array>
+					</Picker.ItemsSource>
+					<Picker.SelectedIndex>0</Picker.SelectedIndex>
+				</Picker>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" >
+				<Button Text="LOCK"   Clicked="LockOperation" BackgroundColor="Accent" TextColor="White" HorizontalOptions="FillAndExpand"/>
+			</StackLayout>
+
+		</StackLayout>
+	</ContentPage>
+
+</TabbedPage>

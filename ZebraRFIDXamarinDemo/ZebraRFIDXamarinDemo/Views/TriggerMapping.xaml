@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZebraRFIDXamarinDemo.Views.TriggerMapping">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <RadioButton Content="Upper(RFID)Lower(Host Scan)" CheckedChanged="OnRadioButtonCheckedChanged" IsChecked ="{Binding RadioButtonOne}"/>
+            <RadioButton Content="Upper(Host Scan)Lower(RFID)" CheckedChanged="OnRadioButtonCheckedChanged"  IsChecked ="{Binding RadioButtonTwo}"/>
+            <RadioButton Content="Upper(RFID)Lower(Sled Scan)" CheckedChanged="OnRadioButtonCheckedChanged"  IsChecked ="{Binding RadioButtonThree}"/>
+            <RadioButton Content="Upper(Sled Scan)Lower(RFID)" CheckedChanged="OnRadioButtonCheckedChanged"  IsChecked ="{Binding RadioButtonFour}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

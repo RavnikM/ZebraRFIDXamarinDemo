@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ZebraRFIDXamarinDemo"
+			 x:Class="ZebraRFIDXamarinDemo.MainPage"
+			 Padding="5, 0"
+			 Title="Zebra RFID Xamarin Demo">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="@" Clicked="ToolbarItem_Clicked">
+		</ToolbarItem>
+	</ContentPage.ToolbarItems>
+	<ListView ItemsSource="{x:Static local:PageDataViewModel.All}"
+              ItemSelected="OnListViewItemSelected" RowHeight="100" SeparatorVisibility="None">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<Frame HasShadow="True" Padding="10" Margin="5">
+						<StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+							<Label Text="{Binding Title}" TextColor="Accent"/>
+							<Label Text="{Binding Description}"/>
+						</StackLayout>
+					</Frame>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+		
+</ContentPage>
