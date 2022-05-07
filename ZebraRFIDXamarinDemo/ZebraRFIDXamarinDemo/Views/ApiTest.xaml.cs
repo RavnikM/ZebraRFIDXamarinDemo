@@ -22,6 +22,8 @@ namespace ZebraRFIDXamarinDemo.Views
             InitializeComponent();
             BindingContext = apitest = new ApiTestViewModel();
             apitest.Request = "http://api.open-notify.org/iss-now.json?callback=?";
+            apitest.PostRequest = "192.168.1.7:5000/api/addtag";
+            apitest.PostResponse = "{'sometagdata' : S123456789}";
             _client = new HttpClient();
         }
         
@@ -60,9 +62,11 @@ namespace ZebraRFIDXamarinDemo.Views
                     apitest.Response = content;
                 }
             }
-            catch (Exception)
+            catch (Exception e1)
             {
                 System.Console.WriteLine("Http request error happend!");
+                System.Console.WriteLine(e1.Message);
+                
             }
 
         }
