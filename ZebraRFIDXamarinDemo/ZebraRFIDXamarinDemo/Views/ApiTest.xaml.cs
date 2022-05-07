@@ -20,6 +20,7 @@ namespace ZebraRFIDXamarinDemo.Views
         {
             InitializeComponent();
             BindingContext = apitest = new ApiTestViewModel();
+            apitest.Request = "http://api.open-notify.org/iss-now.json?callback=?";
 
         }
         
@@ -29,12 +30,13 @@ namespace ZebraRFIDXamarinDemo.Views
 
             HttpClient _client;
             _client = new HttpClient();
-            HttpResponseMessage response = await _client.GetAsync("http://api.open-notify.org/iss-now.json?callback=?");
+            HttpResponseMessage response = await _client.GetAsync(apitest.Request);
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
                 System.Console.WriteLine(content);
                 apitest.Response = content;
+
                 //RecivedDataEditorGET.Text = content;
             }
         }

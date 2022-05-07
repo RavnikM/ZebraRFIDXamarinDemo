@@ -8,7 +8,7 @@
                 HorizontalOptions="CenterAndExpand" />
 
 
-            <Entry Text="" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
+            <Entry x:Name="entry_get" Text="{Binding Request}" HorizontalTextAlignment="Start" Placeholder="http://api.open-notify.org/iss-now.json?callback=?"/>
             <Button Text="Send" Clicked="on_get_clicked" HorizontalOptions="Fill"/>
             <Label x:Name="label_get" Text="{Binding Response}" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
 
