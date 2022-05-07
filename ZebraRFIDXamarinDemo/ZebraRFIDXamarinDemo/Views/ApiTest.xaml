@@ -4,10 +4,19 @@
              x:Class="ZebraRFIDXamarinDemo.Views.ApiTest">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+            <Label Text="Hello A" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Text="Fooo" Clicked="on_foo_clicked"/>
+
+
+            <Entry Text="GET Method" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
+            <Button Text="Send" Clicked="on_get_clicked" HorizontalOptions="Fill"/>
+            <Editor Text="API result" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
+
+
+            <Entry Text="Post Method" HorizontalTextAlignment="Start" Placeholder="Api endpoint..."/>
+            <Button Text="Send" Clicked="on_post_clicked" HorizontalOptions="Fill"/>
+            <Editor Text="API result" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

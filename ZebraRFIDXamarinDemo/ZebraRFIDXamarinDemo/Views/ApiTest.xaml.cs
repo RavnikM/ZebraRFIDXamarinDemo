@@ -18,9 +18,15 @@ namespace ZebraRFIDXamarinDemo.Views
             
         }
 
-        public void on_foo_clicked(object sender, EventArgs e)
+        public void on_get_clicked(object sender, EventArgs e)
         {
-            System.Console.WriteLine("Klik na fooo");
+            System.Console.WriteLine("Klik na GET");
+        }
+
+
+        public void on_post_clicked(object sender, EventArgs e)
+        {
+            System.Console.WriteLine("Klik na POST");
         }
     }
 }
